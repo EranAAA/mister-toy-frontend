@@ -1,0 +1,46 @@
+.user-info {
+    @include flexCenter;
+    justify-content: flex-end;
+    gap: 10px;
+
+    // button {
+    //     width: rem(70px);
+    // }
+
+    img {
+        width: 30px;
+    }
+}
+
+.login-page {
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 220px;
+    height: 170px;
+    position: fixed;
+    top: 75px;
+    right: 6px;
+    border-radius: 5px;
+    background-color: $clr7;
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 0
+    }
+}
+
+.login-form {
+    @include flexCenter;
+    flex-direction: column;
+
+    button {
+        background-color: unset;
+        border: 1px solid #121212;
+        border-radius: 5px;
+        cursor: pointer;
+        line-height: 20px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,15 @@
+.pager {
+    @include type(boldCondensed);
+    background: $clr2;
+    color: $clr3;
+    padding: em(32px) em(37px);
+
+    ul {
+        gap: em(10px);
+
+        .active {
+            color: $clr1;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.toy-main-top {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   border-bottom: 2px solid $clr8;
+   padding: 10px $layoutPadding;
+   position: relative;
+   top: 70px;
+
+   .toy-filter-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+
+      @include for-mobileOnly-layout {
+         // 640px max
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   .add-toy-btn,
+   .paging-container {
+      @include flexCenter;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      gap: 10px;
+   }
+
+   .add-toy-btn {
+      font-size: rem(22px);
+      text-decoration: underline;
+   }
+}

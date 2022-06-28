@@ -1,0 +1,66 @@
+.edit-container {
+   position: relative;
+   top: 70px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   align-content: center;
+   gap: 10px;
+
+   .toy-edit-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      gap: 6px;
+
+      .img-edit { 
+         background-color: lightgray;
+         height: 150px;
+         width: 150px;
+      }
+
+      input {
+         color: black;
+      }
+   }
+
+   .toy-edit-form input {
+      width: 150px;
+   }
+
+   .toy-edit-form select {
+      width: 150px;
+      height: 21px;
+   }
+
+   form .multi-select-form {
+      width: 150px;
+      height: 140px;
+   }
+
+   .toy-edit-form label {
+      width: 250px;
+      display: flex;
+   }
+
+   .toy-edit-form span {
+      width: 80px;
+      text-align: left;
+   }
+
+   .edit-btn {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+   }
+
+   .edit-header {
+      text-align: center;
+      margin: 10px 0px 10px 0px;
+      font-size: rem(20px);
+   }
+}

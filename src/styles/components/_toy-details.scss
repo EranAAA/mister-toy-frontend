@@ -1,0 +1,149 @@
+.details-container {
+   @include flexCenter;
+   align-items: flex-start;
+   padding: $layoutPadding;
+   gap: 30px;
+   position: relative;
+   top: 70px;
+   flex-direction: column-reverse;
+   align-items: center;
+
+   @include for-tablet-layout {
+      // 700px min
+      flex-direction: row;
+      align-items: flex-start;
+   }
+
+   .details-img {
+      width: 100%;
+
+      @include for-tablet-layout {
+         // 700px min
+         width: 50%;
+      }
+
+      img {
+         aspect-ratio: 1/0.7;
+         object-fit: contain;
+         background-color: #d3d3d366;
+      }
+   }
+
+   .details-info {
+      text-align: left;
+      width: 100%;
+      font-size: rem(22px);
+
+      @include for-tablet-layout {
+         // 700px min
+         width: 50%;
+
+      }
+
+      .details-btn {
+         text-align: left;
+         font-size: rem(18px);
+         border-bottom: 1px solid $clr8;
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .details-title {
+         font-size: rem(40px);
+         margin-top: 20px;
+         margin-bottom: 0;
+      }
+
+      .details-review-count,
+      .details-date,
+      .details-stock {
+         font-size: rem(15px);
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      .details-review-count {
+         display: flex;
+         align-items: center;
+      }
+
+      .details-description {
+         font-size: rem(16px);
+      }
+
+      .details-labels {
+         font-size: rem(16px);
+         padding-bottom: 30px;
+         border-bottom: 1px solid $clr8;
+      }
+
+   }
+}
+
+.review-container {
+   position: relative;
+   top: 70px
+}
+
+.review-header {
+   padding: $layoutPadding;
+   padding-top: 0;
+   padding-bottom: 0;
+   border-bottom: 2px solid $clr8;
+   font-size: rem(18px);
+}
+
+.review-app {
+
+   .details-review {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      font-size: rem(16px);
+      flex-grow: 3;
+      padding: $layoutPadding;
+
+      @include for-tablet-layout {
+         // 700px min
+         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .review-box {
+         background-color: $clr8;
+         // padding: $layoutPadding;
+         // height: 150px;
+         text-align: left;
+         border-radius: 5px;
+         list-style-type: none;
+         position: relative;
+
+         p {
+            margin: 5px 5px;
+         }
+
+         button {
+            border: unset;
+            position: absolute;
+            top: 0;
+            right: 0;
+         }
+      }
+   }
+
+   form {
+      display: flex;
+      padding: $layoutPadding;
+      gap: 10px;
+      flex-direction: column;
+
+      @include for-tablet-layout {
+         // 700px min
+         flex-direction: row;
+      }
+      
+      .filvtC {
+         padding: 0px
+      }
+   }
+
+}

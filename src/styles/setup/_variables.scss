@@ -1,0 +1,25 @@
+// COLOR PALETTE
+$clr1: #000; // Color text for...
+$clr2: #fff; // Background Body
+$clr3: #000; // Color text for...
+$clr4: darken($clr3, 40%); // ?What? how to use it?
+$clr5: #2d2d2d; // ?What?
+$clr6: #ffd700; // for hover
+$clr7: #d3d3d3; // for hover
+$clr8: #f3f3f3; // reviews
+
+// LAYOUT
+$layoutPadding: 20px;
+
+// LAYOUT BREAKPOINTS
+$break-mobileOnly: 640px; // ?What? why so big for narrow?
+$break-mobile: 640px; // ?What? why so big for narrow?
+$break-tablet: 700px;
+$break-normal: 900px; // ?What? why so big for narrow?
+$break-wide: 1300px;
+
+$padded-break-mobileOnly: $break-mobileOnly+$layoutPadding * 2;
+$padded-break-mobile: $break-mobile+$layoutPadding * 2;
+$padded-break-tablet: $break-tablet+$layoutPadding * 2;
+$padded-break-normal: $break-normal+$layoutPadding * 2;
+$padded-break-wide: $break-wide+$layoutPadding * 2;

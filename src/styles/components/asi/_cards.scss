@@ -1,0 +1,52 @@
+.cards-container {
+    grid-template-areas:
+        "c1 c1 c2 c2 . ."
+        "c1 c1 c2 c2 t t"
+        ". . c3 c3 t t"
+        ". . c3 c3 . .";
+
+    .teaser {
+        grid-area: t;
+
+        img {
+            padding: 0 6%;
+        }
+    }
+}
+
+.card {
+    display: grid;
+    padding: 9.5% 10.5%;
+    background-color: $clr3;
+    color: $clr2;
+    border: 1px solid $clr2;
+    margin: -1px 0 0 -1px;
+    cursor: pointer;
+
+    &:nth-child(1) {
+        grid-area: c1;
+    }
+
+    &:nth-child(2) {
+        grid-area: c2;
+    }
+
+    &:nth-child(3) {
+        grid-area: c3;
+    }
+
+    .card-image {
+        object-fit: contain;
+        aspect-ratio: 1.5 / 1;
+        margin: 20px 0;
+    }
+
+    .card-desc {
+        font-size: rem(20px);
+        align-self: end;
+        
+        @include for-wide-layout {
+            font-size: rem(26px);
+        }
+    }
+}

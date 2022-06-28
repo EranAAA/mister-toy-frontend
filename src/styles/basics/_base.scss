@@ -1,0 +1,299 @@
+::selection {
+   //* Make selected text gold on a red background */
+   background-color: lightgray;
+   color: $clr3;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+html {
+   font-family: Bahnschrift, sans-serif;
+   color: $clr3;
+   line-height: lh(26px); // $pixels/($context = 16)
+
+   @include for-mobileOnly-layout {
+      // 500px max
+      font-size: 10px;                                  ;
+   }
+
+   @include for-mobile-layout {
+      // 500px min
+      font-size: 11px;
+   }
+
+   @include for-tablet-layout {
+      // 700px min
+      font-size: 12px;
+   }
+
+   @include for-normal-layout {
+      // 900px min
+      font-size: 12px;
+   }
+
+   @include for-wide-layout {
+      // 1300px min
+      font-size: 14px;
+   }
+}
+
+body {
+   margin: 0;
+   background-color: $clr2; //white
+
+   @include for-normal-layout {
+      &.sidebar-open {
+         overflow: hidden;
+      }
+   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: 500;
+   margin: 0 0 0; // Change from margin: 0 0 1rem; 
+   line-height: lh(40px, 29px); // $pixels/($context = 29)
+}
+
+h1 {
+   font-size: rem(40px);
+}
+
+h2 {
+   font-size: em(16px);
+   margin: em(63px) 0;
+   grid-area: title; // ?What? Test it
+   color: $clr1;
+   text-transform: uppercase;
+   @include type(boldCondensed); // ?What? Test it
+}
+
+h3 {
+   font-size: em(29px);
+}
+
+img {
+   width: 100%;
+}
+
+select,
+input {
+   font-family: Bahnschrift, sans-serif;
+   line-height: lh(25px);
+   height: 25px;
+}
+
+label {
+   font-size: rem(17px);
+}
+
+button {
+   background-color: unset;
+   font-family: Bahnschrift, sans-serif;
+   border: 1px solid $clr1;
+   border-radius: 5px;
+   cursor: pointer;
+   line-height: lh(30px);
+   font-size: rem(16px);
+
+   &:hover {
+      background-color: $clr6
+   }
+}
+
+p {
+   // margin: 0 0 1em;
+   max-width: 60ch;
+   @include type(light);
+
+   .main-text & {
+      grid-column: 3 / 6;
+      font-size: rem(22px);
+      line-height: 1.384615;
+      padding-inline-start: rem(30px);
+      position: relative;
+
+      &::after {
+         content: "";
+         position: absolute;
+         display: block;
+         top: 0;
+         left: 0;
+         width: 8px;
+         height: 100%;
+         max-height: 42px;
+         background-color: $clr1;
+
+         @include for-wide-layout {
+            width: 10px;
+         }
+
+      }
+
+      @include for-wide-layout {
+         grid-column: 3 / 5;
+         font-size: rem(26px);
+      }
+   }
+}
+
+.btn {
+   @include btn;
+
+   &-dark {
+      @include btn($type: dark);
+   }
+
+   &-light {
+      @include btn($type: light);
+   }
+}
+
+// links
+a {
+   color: $clr1;
+   text-decoration: none;
+
+   &.active {
+      background-color: $clr1;
+      border-radius: 5px;
+      color: $clr2;
+   }
+
+}
+
+mark {
+   color: $clr1;
+   background-color: transparent;
+}
+
+
+// MOVE ALL BENEATH TO NEW SCSS
+
+.loader {
+   border: 10px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 12px solid lightblue;
+   width: 70px;
+   height: 70px;
+   -webkit-animation: spin 2s linear infinite;
+   /* Safari */
+   animation: spin 2s linear infinite;
+   position: relative;
+   // @include flexCenter;
+   top: 100px;
+   left: 40%;
+   // transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.open-nice-popup {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   border: unset;
+   font-size: rem(40px);
+   z-index: 10000;
+
+   &.hide {
+      display: none;
+   }
+
+   &:hover {
+      background-color: unset;
+   }
+}
+
+.nice-popup {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   border: unset;
+   width: rem(400px);
+   background-color: ghostwhite;
+   height: rem(400px);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+
+   header {
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #98b4d6;
+
+   }
+
+   main {
+      width: 100%;
+      flex-grow: 1;
+   }
+
+   footer {
+      background-color: #98b4d6;
+      width: 100%;
+   }
+
+   button {
+      border: unset;
+      &:hover {
+         background-color: unset;
+      }
+   }
+
+}
+
+.chat-app {
+   height: 100%;
+
+   .chat {
+      height: 300px;
+      overflow: auto;
+   }
+
+   .question {
+      background-color: lightgray;
+      margin: 0;
+      padding: 0 5px 0px 5px;
+   }
+
+   .answer {
+      margin: 0;
+      padding: 0 5px 0px 5px;
+   }
+
+   form {
+      position: absolute;
+      bottom: 22px;
+      width: 100%;
+      display: flex;
+   }
+
+   input {
+      width: 100%;
+
+      &:last-child {
+         width: 20%;
+      }
+   }
+}
